@@ -5,6 +5,12 @@ VisualStudioVersion = 17.12.35309.182
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lagoon.Web", "Lagoon.Web\Lagoon.Web.csproj", "{49313924-0003-47DC-AE62-BAF6DFF902DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lagoon.Application", "Lagoon.Application\Lagoon.Application.csproj", "{B4476754-5943-4C51-9A5E-3CFBBD908C76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lagoon.Domain", "Lagoon.Domain\Lagoon.Domain.csproj", "{5A249840-44A2-4EC0-B7D4-3CB5B4FF041D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lagoon.Infrastructure", "Lagoon.Infrastructure\Lagoon.Infrastructure.csproj", "{CD05E27E-E6E2-42E1-9629-010CBBD8B07A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{49313924-0003-47DC-AE62-BAF6DFF902DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49313924-0003-47DC-AE62-BAF6DFF902DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49313924-0003-47DC-AE62-BAF6DFF902DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4476754-5943-4C51-9A5E-3CFBBD908C76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4476754-5943-4C51-9A5E-3CFBBD908C76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4476754-5943-4C51-9A5E-3CFBBD908C76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4476754-5943-4C51-9A5E-3CFBBD908C76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A249840-44A2-4EC0-B7D4-3CB5B4FF041D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A249840-44A2-4EC0-B7D4-3CB5B4FF041D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A249840-44A2-4EC0-B7D4-3CB5B4FF041D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A249840-44A2-4EC0-B7D4-3CB5B4FF041D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD05E27E-E6E2-42E1-9629-010CBBD8B07A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD05E27E-E6E2-42E1-9629-010CBBD8B07A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD05E27E-E6E2-42E1-9629-010CBBD8B07A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD05E27E-E6E2-42E1-9629-010CBBD8B07A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
