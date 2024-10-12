@@ -8,14 +8,14 @@ namespace Lagoon.Web.Controllers
 {
     public class VillaController : Controller
     {
-        private readonly IVillaRepository _villaRepository;
-        public VillaController(IVillaRepository villaRepository)
+        private readonly IUnitOfWork _unitOfWork;
+        public VillaController(IUnitOfWork unitOfWork)
         {
-           _villaRepository = villaRepository;
+           _unitOfWork = unitOfWork;
         }
         public IActionResult Index()
         {
-            var villas = _villaRepository.GetAll();
+            var villas = _unitOfWork.Villa.GetAll();
             return View(villas);
         }
 
@@ -33,8 +33,8 @@ namespace Lagoon.Web.Controllers
             }
             if (ModelState.IsValid)
             {
-                _villaRepository.Add(obj);
-                _villaRepository.Save();
+                _unitOfWork.Villa.Add(obj);
+                _unitOfWork.Villa.Save();
                 return RedirectToAction("Index");
             }
            return View();
@@ -42,7 +42,7 @@ namespace Lagoon.Web.Controllers
 
         public IActionResult Update(int villaId)
         {
-            Villa? obj = _villaRepository.Get(u => u.id == villaId);
+            Villa? obj = _unitOfWork.Villa.Get(u => u.id == villaId);
             //we can use the find as well insterd of using above
             //Villa? obj = _db.Villas.Find(villaId);
 
@@ -62,8 +62,8 @@ namespace Lagoon.Web.Controllers
             
             if (ModelState.IsValid && obj.id>0)
             {
-                _villaRepository.Update(obj);
-                _villaRepository.Save();
+                _unitOfWork.Villa.Update(obj);
+                _unitOfWork.Villa.Save();
                 return RedirectToAction("Index");
             }
             return View();
@@ -71,7 +71,7 @@ namespace Lagoon.Web.Controllers
 
         public IActionResult Delete(int villaId)
         {
-            Villa? obj = _villaRepository.Get(u => u.id == villaId);
+            Villa? obj = _unitOfWork.Villa.Get(u => u.id == villaId);
 
             if (obj == null)
             {
@@ -83,11 +83,11 @@ namespace Lagoon.Web.Controllers
         [HttpPost]
         public IActionResult Delete(Villa obj)
         {
-            Villa? objFromDb = _villaRepository.Get(u => u.id == obj.id);
+            Villa? objFromDb = _unitOfWork.Villa.Get(u => u.id == obj.id);
             if (objFromDb is not null)
             {
-                _villaRepository.Remove(objFromDb);
-                _villaRepository.Save();
+                _unitOfWork.Villa.Remove(objFromDb);
+                _unitOfWork.Villa.Save();
                 return RedirectToAction("Index");
             }
             return View();
