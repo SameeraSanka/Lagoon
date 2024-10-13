@@ -35,9 +35,11 @@ namespace Lagoon.Web.Controllers
             {
                 _unitOfWork.Villa.Add(obj);
                 _unitOfWork.Villa.Save();
+                TempData["success"] = "The villa has been Created successfully";
                 return RedirectToAction("Index");
             }
-           return View();
+            TempData["error"] = "The villa has been not created";
+            return View();
         }
 
         public IActionResult Update(int villaId)
@@ -64,8 +66,10 @@ namespace Lagoon.Web.Controllers
             {
                 _unitOfWork.Villa.Update(obj);
                 _unitOfWork.Villa.Save();
+                TempData["success"] = "The villa has been updated successfully";
                 return RedirectToAction("Index");
             }
+            TempData["error"] = "The villa has been not updated";
             return View();
         }
 
@@ -88,8 +92,10 @@ namespace Lagoon.Web.Controllers
             {
                 _unitOfWork.Villa.Remove(objFromDb);
                 _unitOfWork.Villa.Save();
+                TempData["success"] = "The villa has been deleted successfully";
                 return RedirectToAction("Index");
             }
+            TempData["error"] = "The Villa can not be deleted";
             return View();
         }
     }
