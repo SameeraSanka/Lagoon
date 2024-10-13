@@ -18,4 +18,8 @@
     <ProjectReference Include="..\Lagoon.Infrastructure\Lagoon.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\VillaImages\" />
+  </ItemGroup>
+
 </Project>
