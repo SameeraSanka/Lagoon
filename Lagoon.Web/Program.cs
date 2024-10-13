@@ -1,4 +1,6 @@
 using Lagoon.Application.Common.Interfaces;
+using Lagoon.Application.Services.Implementation;
+using Lagoon.Application.Services.Interface;
 using Lagoon.Infrastructure.Data;
 using Lagoon.Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +14,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(
     option => option.UseSqlServer(builder.Configuration.GetConnectionString("DefaltConnection")));
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IVillaService, VillaService>();
 
 var app = builder.Build();
 
